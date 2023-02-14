@@ -1,0 +1,34 @@
+.form-container{
+    width: 80vw;
+    height: 40vh; 
+    background-color:azure;
+    margin: 0 auto;
+    padding: 0px 20px;
+    font-size: 1.3em;
+    border-radius: 5px;
+}
+.form-container input{
+    margin: 15px 0;
+}
+.form-container label{
+    margin-right: 10px;
+}
+.task-input{
+    width: 250px;
+    height: 25px;
+}
+.date-input{
+    width: 200px;
+    height: 25px;
+}
+.add-button{
+    width: 200px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Carter One', cursive;
+    font-size: 1em;
+}
+.add-button:active{
+    transform: scale(95%);
+}

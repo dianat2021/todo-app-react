@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import DisplayTasks from "./Components/DisplayTasks";
+import Form from "./Components/Form";
 
 function App() {
+  const [taskInput, setTaskInput] = useState("");
+  const [dateInput, setDateInput] = useState("");
+  const [timeInput, setTimeInput] = useState("");
+  const [todos, setTodos] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Rigister Your Tasks!</h1>
+      <Form
+        taskInput={taskInput}
+        setTaskInput={setTaskInput}
+        dateInput={dateInput}
+        setDateInput={setDateInput}
+        timeInput={timeInput}
+        setTimeInput={setTimeInput}
+        todos={todos}
+        setTodos={setTodos}
+      />
+      <DisplayTasks todos={todos} setTodos={setTodos}/>
     </div>
   );
 }
