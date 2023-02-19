@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Form.module.css"
-const Form = ({ taskInput, setTaskInput, dateInput, setDateInput, timeInput, setTimeInput, todos, setTodos }) => {
+const Form = ({ taskInput, setTaskInput, dateInput, setDateInput, timeInput, setTimeInput, todos, setTodos, error, setError }) => {
     //-----------------------------
     const taskInputHandler = (e)=>{
-        setTaskInput(e.target.value)
+        setTaskInput(e.target.value);
+        setError(false)
     }
     //-----------------------------
     const dateInputHandler = (e)=>{
@@ -15,7 +16,11 @@ const Form = ({ taskInput, setTaskInput, dateInput, setDateInput, timeInput, set
     }
     //-----------------------------
     const submitHandler = (e)=>{
-        e.preventDefault();
+      e.preventDefault();
+      if(taskInput === ''){
+        setError(true);
+        return
+      }
         const userData = {
             task: taskInput,
             date: dateInput,
@@ -32,7 +37,7 @@ const Form = ({ taskInput, setTaskInput, dateInput, setDateInput, timeInput, set
     <form className={styles['form-container']}>
       <div>
         <label>Task:</label>
-        <input type="text" onChange={taskInputHandler} value={taskInput} className={styles['task-input']}/>
+        <input type="text" onChange={taskInputHandler} value={taskInput} className={`${styles['task-input']} ${error ? styles['empty-input'] : ''}`}/>
       </div>
       <div>
         <label>Date:</label>

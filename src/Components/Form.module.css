@@ -26,9 +26,21 @@
     height: 40px;
     display: block;
     margin: 0 auto;
-    font-family: 'Carter One', cursive;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1f2833;
+    color: white;
+    border-radius: 5px;
+    border: none;
     font-size: 1em;
+    cursor: pointer;
 }
 .add-button:active{
     transform: scale(95%);
+}
+.add-button:hover{
+    opacity: 0.9;
+}
+.empty-input{
+    border-color: red;
+    
 }

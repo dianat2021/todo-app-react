@@ -19,15 +19,15 @@ const Task = ({ todo, todos, setTodos }) => {
     );
   };
   return (
-    <li className="item-container">
+    <li className={styles['item-container']}>
       <span className={`${styles['task-container']} ${todo.completed ? styles['completed-task'] : ''}`}>
-        <span>{todo.task}</span>
-        <span>{todo.date}</span>
-        <span>{todo.time}</span>
+        <span className={styles['task-cell']}>{todo.task}</span>
+        <span className={styles['date-cell']}>{todo.date}</span>
+        <span className={styles['time-cell']}>{todo.time}</span>
       </span>
-      <span className="ControlButtons-container">
+      <span className={styles['ControlButtons-container']}>
         <button>Edit</button>
-        <button onClick={completedTaskHandler}>Completed</button>
+        <button onClick={completedTaskHandler}>{!todo.completed ? "Undone" : "Done"}</button>
         <button onClick={deleteTaskHandler}>Delete</button>
       </span>
     </li>

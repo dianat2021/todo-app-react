@@ -8,9 +8,10 @@ function App() {
   const [dateInput, setDateInput] = useState("");
   const [timeInput, setTimeInput] = useState("");
   const [todos, setTodos] = useState([]);
+  const [error,setError] = useState(false)
   return (
     <div className="App">
-      <h1>Rigister Your Tasks!</h1>
+      <h1>Register Your Tasks!</h1>
       <Form
         taskInput={taskInput}
         setTaskInput={setTaskInput}
@@ -20,6 +21,8 @@ function App() {
         setTimeInput={setTimeInput}
         todos={todos}
         setTodos={setTodos}
+        error={error}
+        setError={setError}
       />
       <DisplayTasks todos={todos} setTodos={setTodos}/>
     </div>
