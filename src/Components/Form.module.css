@@ -1,14 +1,17 @@
 .form-container{
     width: 80vw;
-    height: 40vh; 
-    background-color:azure;
+    height: 45vh; 
+    background-color:rgb(234, 233, 220);
     margin: 0 auto;
     padding: 0px 20px;
     font-size: 1.3em;
     border-radius: 5px;
+    display: flex;
 }
 .form-container input{
     margin: 15px 0;
+    border-radius: 5px;
+    border-color: black;
 }
 .form-container label{
     margin-right: 10px;
@@ -17,14 +20,15 @@
     width: 250px;
     height: 25px;
 }
-.date-input{
+.date-input, .time-input, .filter{
     width: 200px;
     height: 25px;
 }
 .add-button{
     width: 200px;
     height: 40px;
-    display: block;
+    /* display: block; */
+    float: right;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
     background-color: #1f2833;
@@ -41,6 +45,23 @@
     opacity: 0.9;
 }
 .empty-input{
-    border-color: red;
-    
+    border-color: tomato;  
+    background-color: tomato; 
+}
+.character-limit{
+    font-size: 0.6em;
+    font-weight: bold;
+    color: tomato;
+    margin: 0;
+    vertical-align: middle;
+}
+.task-column{
+    flex-basis: 60%;
+}
+.filter-column{
+    flex-basis: 40%;
+    /* border: 2px solid black; */
+}
+.filter-container{
+    padding: 15px 15px;
 }

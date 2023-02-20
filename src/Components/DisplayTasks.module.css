@@ -1,8 +1,11 @@
 .list-container{
     width: 80vw;
-    margin: 0 auto;
+    min-height: 30vh;
+    margin: 15px auto;
     list-style: none;
-    padding: 20px 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color:rgb(234, 233, 220);
 }
 .list-container button{
     width: 90px;
@@ -16,4 +19,29 @@
 }
 .list-container button:hover{
     opacity: 0.9;
+}
+.empty-list{
+    font-size: 2em;
+    text-align: center;
+}
+.list-header{
+    display: flex;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+}
+.list-titles{
+    flex-basis: 70%;
+    display: flex;
+    justify-content: center;
+}
+.task-title{
+    flex-basis: 60%;
+}
+.due-title,.due-time{
+    flex-basis: 20%;
+}
+.control-title{
+    flex-basis: 30%;
 }

@@ -22,8 +22,8 @@ const Task = ({ todo, todos, setTodos }) => {
     <li className={styles['item-container']}>
       <span className={`${styles['task-container']} ${todo.completed ? styles['completed-task'] : ''}`}>
         <span className={styles['task-cell']}>{todo.task}</span>
-        <span className={styles['date-cell']}>{todo.date}</span>
-        <span className={styles['time-cell']}>{todo.time}</span>
+        <span className={styles['date-cell']}>{todo.date ? todo.date : "not entered"}</span>
+        <span className={styles['time-cell']}>{todo.time ?todo.time : "not entered"}</span>
       </span>
       <span className={styles['ControlButtons-container']}>
         <button>Edit</button>
