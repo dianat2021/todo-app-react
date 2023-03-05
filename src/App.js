@@ -8,25 +8,29 @@ function App() {
   const [dateInput, setDateInput] = useState("");
   const [timeInput, setTimeInput] = useState("");
   const [todos, setTodos] = useState([]);
-  const [error,setError] = useState(false)
-  const [errorMessage,setErrorMessage] = useState({})
-  const [taskStatus, setTaskStatus] = useState('all');
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState({});
+  const [taskStatus, setTaskStatus] = useState("all");
   const [filteredTasks, setFilteredTask] = useState([]);
+  
+  
+  useEffect(() => {
+    filteredTaskHandler();
+  }, [todos, taskStatus]);
 
-  const filteredTaskHandler = ()=>{
+  const filteredTaskHandler = () => {
     switch (taskStatus) {
-      case 'completed':
-        return setFilteredTask(todos.filter(todo => todo.completed === true))
-      case 'incomplete':
-        return setFilteredTask(todos.filter(todo => todo.completed === false))
+      case "completed":
+        return setFilteredTask(todos.filter((todo) => todo.completed));
+      case "incomplete":
+        return setFilteredTask(
+          todos.filter((todo) => !todo.completed)
+        );
       default:
-        return setFilteredTask(todos)
+        return setFilteredTask(todos);
     }
-  }
-  //-----------------------------------------------
-  useEffect(()=>{
-    filteredTaskHandler()
-  }, [todos, taskStatus])
+  };
+  
   return (
     <div className="App">
       <h1>Register Your Tasks</h1>
@@ -45,7 +49,17 @@ function App() {
         setErrorMessage={setErrorMessage}
         setTaskStatus={setTaskStatus}
       />
-      <DisplayTasks todos={todos} setTodos={setTodos} filteredTasks={filteredTasks}/>
+      <DisplayTasks
+        todos={todos}
+        setTodos={setTodos}
+        filteredTasks={filteredTasks}
+        setTaskInput={setTaskInput}
+        setDateInput={setDateInput}
+        setTimeInput={setTimeInput}
+        taskInput={taskInput}
+        dateInput={dateInput}
+        timeInput={timeInput}
+      />
     </div>
   );
 }

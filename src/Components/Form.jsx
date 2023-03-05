@@ -15,6 +15,7 @@ const Form = ({
   errorMessage,
   setErrorMessage,
   setTaskStatus,
+  editId,
 }) => {
   //-----------------------------
   const taskInputHandler = (e) => {
@@ -60,9 +61,9 @@ const Form = ({
     setTimeInput("");
   };
   //----------------------------------------------
-  const taskStatusHandler = (e)=>{
-    setTaskStatus(e.target.value)
-  }
+  const taskStatusHandler = (e) => {
+    setTaskStatus(e.target.value);
+  };
   return (
     <form className={styles["form-container"]}>
       <section className={styles["task-column"]}>
